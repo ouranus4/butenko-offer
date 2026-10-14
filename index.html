@@ -410,6 +410,17 @@ input[type=range]:focus-visible{outline:2px solid var(--ink);outline-offset:6px}
 .val span{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:#ff3d7f;padding:7px 12px;border-radius:999px;animation:pulse 1.8s infinite}
 .start-from{align-self:flex-start;font-size:15px;font-weight:600;color:var(--ink);background:var(--lilac);padding:10px 16px;border-radius:999px}
 .start-from b{font-family:var(--display);color:var(--plum)}
+.old-price{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.old-price s{font-family:var(--display);font-size:clamp(30px,4.4vw,44px);font-weight:500;color:var(--muted);text-decoration-thickness:4px;text-decoration-color:#ff3d7f}
+.old-price .save{font-size:13px;font-weight:700;color:#fff;background:#ff3d7f;padding:6px 12px;border-radius:999px;animation:pulse 1.8s infinite}
+.incl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:15px}
+.incl li{display:grid;grid-template-columns:20px 1fr;gap:10px}
+.incl li::before{content:"✓";font-weight:700;color:var(--plum)}
+.incl b{color:var(--ink)}
+.incl .gift-line{background:var(--blush);border-radius:14px;padding:10px 12px;grid-template-columns:20px 1fr}
+.incl .gift-line::before{content:"🎁"}
+.incl s{color:var(--muted)}
+.price-in .tag{white-space:normal}
 footer{display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center;padding-top:20px}
 footer h2{max-width:20ch}
 footer small{font-size:12px;color:var(--muted)}
@@ -496,8 +507,8 @@ footer small{font-size:12px;color:var(--muted)}
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>1000+ учениць</span><span>Вебінар</span><span>Автовебінар</span><span>Воронка під ключ</span><span>3 + 3 креативи</span><span>Трафік на Європу</span><span>Місяць супроводу</span><span>Подарунок €300 за 48 годин</span>
-    <span>1000+ учениць</span><span>Вебінар</span><span>Автовебінар</span><span>Воронка під ключ</span><span>3 + 3 креативи</span><span>Трафік на Європу</span><span>Місяць супроводу</span><span>Подарунок €300 за 48 годин</span>
+    <span>1000+ учениць</span><span>Вебінар</span><span>Автовебінар</span><span>Воронка під ключ</span><span>3 + 3 креативи</span><span>Трафік на Європу</span><span>Місяць супроводу</span><span>Подарунок €500 за 48 годин</span>
+    <span>1000+ учениць</span><span>Вебінар</span><span>Автовебінар</span><span>Воронка під ключ</span><span>3 + 3 креативи</span><span>Трафік на Європу</span><span>Місяць супроводу</span><span>Подарунок €500 за 48 годин</span>
   </div>
 </div>
 
@@ -773,7 +784,7 @@ footer small{font-size:12px;color:var(--muted)}
     <div class="bonus-body">
       <span class="gift"><i>🎁</i> Подарунок за швидке рішення</span>
       <h3>Воронка на VSL-відео <span class="grad">у подарунок</span></h3>
-      <div class="val"><s>€300</s><b class="grad">€0</b><span>для вас у подарунок</span></div>
+      <div class="val"><s>€500</s><b class="grad">€0</b><span>для вас у подарунок</span></div>
       <p>VSL — коротке продаюче відео на 10–20 хвилин: ви розповідаєте про проблему, свій метод і ведете людину до покупки. Якщо ви вирішите протягом 48 годин з моменту отримання цієї пропозиції, я пропишу сценарій такого відео і налаштую під нього окрему воронку. Її можна запускати в рекламу паралельно з вебінаром, щоб продавати програми і міні-продукт ще одним шляхом.</p>
       <span class="count-label" id="countLabel">Подарунок діє ще</span>
       <div class="digits">
@@ -791,10 +802,16 @@ footer small{font-size:12px;color:var(--muted)}
   <div class="price">
     <div class="price-in">
       <div class="price-left">
-        <span class="tag">Інвестиція</span>
+        <span class="tag">Інвестиція · якщо вирішите протягом 48 годин</span>
+        <div class="old-price"><s>€1 200</s><span class="save">−€300</span></div>
         <div class="total"><span class="grad">€900</span></div>
-        <div class="start-from">Старт — лише <b>€450</b>, решта після запуску</div>
-        <p>Вебінар, воронка з автовебінаром, 6 креативів під різні категорії, консультація по таргету на Європу, перезапис без доплат і місяць супроводу. Плюс подарункова воронка вартістю €300, якщо вирішите протягом 48 годин.</p>
+        <div class="start-from">Старт — передоплата лише <b>€450</b></div>
+        <ul class="incl">
+          <li>Вебінар, воронка з автовебінаром і чат-ботами, 6 креативів, консультація по таргету на Європу</li>
+          <li><b>+ місяць супроводу</b> після запуску</li>
+          <li><b>+ можливість перезаписати</b> вебінар ще раз</li>
+          <li class="gift-line"><b>+ бонус:</b> воронка на VSL-відео <s>€500</s> у подарунок</li>
+        </ul>
       </div>
       <div class="price-right">
         <div class="part"><div><small>Крок 1</small><span>Передоплата на старті</span></div><b>€450</b></div>
